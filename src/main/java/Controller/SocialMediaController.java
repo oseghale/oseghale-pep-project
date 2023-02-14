@@ -11,7 +11,6 @@ import Model.Message;
 import Service.AccountService;
 import Service.MessageService;
 import io.javalin.Javalin;
-import io.javalin.http.BadRequestResponse;
 import io.javalin.http.Context;
 
 /**
@@ -43,16 +42,7 @@ public class SocialMediaController {
         app.delete("/messages/{message_id}", this::deleteMessageByIdHandler);
         app.patch("/messages/{message_id}", this::updateMessageHandler);
         app.get("/accounts/{account_id}/messages", this::getMessagesHandler);
-
         return app;
-    }
-
-    /**
-     * This is an example handler for an example endpoint.
-     * @param context The Javalin Context object manages information about both the HTTP request and response.
-     */
-    private void exampleHandler(Context context) {
-        context.json("sample text");
     }
 
     /**
@@ -65,14 +55,10 @@ public class SocialMediaController {
      * @throws JsonProcessingException will be thrown if there is an issue converting JSON into an object.
      */
     private void postRegisterHandler(Context ctx) throws JsonProcessingException {
-        System.out.println("1");
         ObjectMapper mapper = new ObjectMapper();
         Account account = mapper.readValue(ctx.body(), Account.class);
-        System.out.println("2");
         try{
-            System.out.println("3");
             Account registerAccount = accountService.addAccount(account);
-            System.out.println("4");
             if(registerAccount!=null){
                 ctx.json(mapper.writeValueAsString(registerAccount));
                 ctx.status(200);
@@ -81,7 +67,6 @@ public class SocialMediaController {
             }
         }catch(Exception e){
             e.printStackTrace();
-            System.out.println("9");
             ctx.status(400);
         
         }
@@ -103,7 +88,7 @@ public class SocialMediaController {
     private void postMessageHandler(Context ctx) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         Message message = mapper.readValue(ctx.body(), Message.class);
-        Message createMessage = messageService.createMessage(message);
+        Message createMessage = MessageService.createMessage(message);
         if(createMessage!=null){
             ctx.json(mapper.writeValueAsString(createMessage));
             ctx.status(200);
@@ -135,10 +120,8 @@ public class SocialMediaController {
     }
 
     private void deleteMessageByIdHandler(Context ctx) throws JsonProcessingException{
-        System.out.println("Delete1");
         int message_id = Integer.parseInt(ctx.pathParam("message_id"));
         if(messageService.getMessageById(message_id) != null){
-            System.out.println("+");
             try{
          Message deletedMessage = MessageService.deleteMessageById(message_id);
             ctx.json(deletedMessage);

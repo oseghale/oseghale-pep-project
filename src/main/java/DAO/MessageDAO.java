@@ -10,23 +10,15 @@ import java.util.List;
 
 import Model.Message;
 import Util.ConnectionUtil;
-import io.javalin.http.BadRequestResponse;
+
 
 
 public class MessageDAO {
-    // create new account
+    // create new message
     public Message createMessage(Message message) {
-        System.out.println("6");
        int posted_by = 0;
-
         System.out.println(message);
         if(message.message_text.length() > 0 && message.message_text.length() < 255 && message.posted_by > posted_by){
-        
-            /**   
-            *  System.out.println("8");
-            *  return null; 
-            */
-        System.out.println("7");
         Connection connection = ConnectionUtil.getConnection();
         try{
             //SQL logic
@@ -101,25 +93,20 @@ public class MessageDAO {
 
     // delete message by Id
     public Message deleteMessageById(int message_id){
-        System.out.println("%");
         Connection connection = ConnectionUtil.getConnection();
         // write SQL logic
         try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM message WHERE message_id = ?")) {
-            System.out.println("^");
             //write preparedStatement's setInt method here.
             statement.setInt(1, message_id);
             try (ResultSet rs = statement.executeQuery()) {
                 if (rs.next()) {
-                    System.out.println("&");
                     Message message = new Message(rs.getInt("message_id"),
                     rs.getInt("posted_by"),
                     rs.getString("message_text"),
                     rs.getLong("time_posted_epoch"));
                     try (PreparedStatement deleteStatement = connection.prepareStatement("DELETE FROM message WHERE message_id = ?")) {
-                        System.out.println("*");
                         deleteStatement.setInt(1, message_id);
                         deleteStatement.executeUpdate();
-                        System.out.println("()");
                         return message;
                     }
                 }

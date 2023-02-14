@@ -44,7 +44,6 @@ public class MessageService {
      * @return The persisted account if the persistence is successful.
      */
     public static Message createMessage(Message message) {
-        System.out.println("5");
         return messageDAO.createMessage(message);
     }
 
@@ -57,7 +56,6 @@ public class MessageService {
     }
 
     public static Message deleteMessageById(int message_id){
-        System.out.println("#");
         return messageDAO.deleteMessageById(message_id);
     }
 

@@ -41,7 +41,6 @@ public class AccountService {
      * @return The persisted account if the persistence is successful.
      */
     public Account addAccount(Account account) {
-        System.out.println("5");
         return accountDAO.registerAccount(account);
     }
 

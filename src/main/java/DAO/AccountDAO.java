@@ -13,13 +13,7 @@ import java.sql.Statement;
 public class AccountDAO {
     // register new account
     public Account registerAccount(Account account) {
-        System.out.println("6");
         if(account.password.length() >= 4 && account.username.length() > 0){
-            /**   
-            *  System.out.println("8");
-            *  return null; 
-            */
-        System.out.println("7");
         Connection connection = ConnectionUtil.getConnection();
         try{
             //SQL logic
@@ -43,7 +37,9 @@ public class AccountDAO {
     }
         return null;
     } 
-    
+
+
+    // to login account
     public Account login(Account account){
         Connection connection = ConnectionUtil.getConnection();
         try{
@@ -58,15 +54,11 @@ public class AccountDAO {
             ResultSet rs = preparedStatement.executeQuery();
 
             // Validate user, return null
-        System.out.println("a");
         if (!rs.next()) {
-            System.out.println("b");
             return null;
         }
         // Extract the user information from the result set
-        System.out.println("c");
         int accountId = rs.getInt("account_id");
-        System.out.println("d");
         String username = rs.getString("username");
         String password = rs.getString("password");
         System.out.println(accountId);
