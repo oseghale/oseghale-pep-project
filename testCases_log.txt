@@ -25,297 +25,39 @@
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running AuthIntegrationTest
-1
-2
-3
-5
-6
-7
-4
-a
-b
-1
-2
-3
-5
-6
-4
-a
-b
-1
-2
-3
-5
-6
-7
-4
-1
-2
-3
-5
-6
-7
 Unique index or primary key violation: "PUBLIC.CONSTRAINT_INDEX_E ON PUBLIC.ACCOUNT(USERNAME NULLS FIRST) VALUES ( /* 1 */ 'user' )"; SQL statement:
 INSERT INTO account(username, password) VALUES (?,?) [23505-214]
-4
-1
-2
-3
-5
-6
-7
-4
-1
-2
-3
-5
-6
-4
-1
-2
-3
-5
-6
-7
-4
-a
-c
-d
 1
 user
-[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.426 s - in AuthIntegrationTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.065 s - in AuthIntegrationTest
 [INFO] Running MessagingIntegrationTest
-1
-2
-3
-5
-6
-7
-4
-5
-6
 Message{message_id=0, posted_by=1, message_text='hello message', time_posted_epoch=1669947792}
-7
 !
-Delete1
-1
-2
-3
-5
-6
-7
-4
-5
-6
 Message{message_id=0, posted_by=1, message_text='', time_posted_epoch=1669947792}
-1
-2
-3
-5
-6
-7
-4
-5
-6
 Message{message_id=0, posted_by=1, message_text='hello message', time_posted_epoch=1669947792}
-7
-1
-2
-3
-5
-6
-7
-4
-5
-6
 Message{message_id=0, posted_by=1, message_text='hello message', time_posted_epoch=1669947792}
-7
-1
-2
-3
-5
-6
-7
-4
-5
-6
 Message{message_id=0, posted_by=1, message_text='message 2', time_posted_epoch=1669947792}
-7
-5
-6
 Message{message_id=0, posted_by=2, message_text='message 3', time_posted_epoch=1669947792}
-7
-1
-2
-3
-5
-6
-7
-4
-5
-6
 Message{message_id=0, posted_by=1, message_text='hello message', time_posted_epoch=1669947792}
-7
-1
-2
-3
-5
-6
-7
-4
-5
-6
 Message{message_id=0, posted_by=1, message_text='message 2', time_posted_epoch=1669947792}
-7
-5
-6
 Message{message_id=0, posted_by=2, message_text='message 3', time_posted_epoch=1669947792}
-7
-1
-2
-3
-5
-6
-7
-4
-5
-6
 Message{message_id=0, posted_by=1, message_text='hello message', time_posted_epoch=1669947792}
-7
-Delete1
-+
-#
-%
-^
-&
-*
-()
-5
-6
 Message{message_id=0, posted_by=1, message_text='hello message', time_posted_epoch=1669947792}
-7
 Referential integrity constraint violation: "CONSTRAINT_63: PUBLIC.MESSAGE FOREIGN KEY(POSTED_BY) REFERENCES PUBLIC.ACCOUNT(ACCOUNT_ID) (1)"; SQL statement:
 INSERT INTO message(posted_by, message_text, time_posted_epoch) VALUES (?,?,?) [23506-214]
-1
-2
-3
-5
-6
-7
-4
-5
-6
 Message{message_id=0, posted_by=1, message_text='hello message', time_posted_epoch=1669947792}
-7
 !
-1
-2
-3
-5
-6
-7
-4
-5
-6
 Message{message_id=0, posted_by=1, message_text='Over 255 characters                 Over 255 characters Over 255 characters Over 255 characters Over 255 characters                 Over 255 characters Over 255 characters Over 255 characters Over 255 characters                 Over 255 characters Over 255 characters Over 255 characters Over 255 characters                 Over 255 characters Over 255 characters Over 255 characters', time_posted_epoch=1669947792}
-1
-2
-3
-5
-6
-7
-4
-5
-6
 Message{message_id=0, posted_by=1, message_text='hello message', time_posted_epoch=1669947792}
-7
-1
-2
-3
-5
-6
-7
-4
-5
-6
 Message{message_id=0, posted_by=1, message_text='hello message', time_posted_epoch=1669947792}
-7
-Delete1
-+
-#
-%
-^
-&
-*
-()
 !
-1
-2
-3
-5
-6
-7
-4
-5
-6
 Message{message_id=0, posted_by=1, message_text='hello message', time_posted_epoch=1669947792}
-7
-1
-2
-3
-5
-6
-7
-4
-5
-6
 Message{message_id=0, posted_by=1, message_text='hello message', time_posted_epoch=1669947792}
-7
-1
-2
-3
-5
-6
-7
-4
-5
-6
 Message{message_id=0, posted_by=1, message_text='message 2', time_posted_epoch=1669947792}
-7
-5
-6
 Message{message_id=0, posted_by=2, message_text='message 3', time_posted_epoch=1669947792}
-7
-1
-2
-3
-5
-6
-7
-4
-5
-6
 Message{message_id=0, posted_by=1, message_text='hello message', time_posted_epoch=1669947792}
-7
-1
-2
-3
-5
-6
-7
-4
-1
-2
-3
-5
-6
-7
-4
-5
-6
 Message{message_id=0, posted_by=1, message_text='hello message', time_posted_epoch=1669947792}
-7
-[INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 20.622 s - in MessagingIntegrationTest
+[INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 20.724 s - in MessagingIntegrationTest
 [INFO] 
 [INFO] Results:
 [INFO] 
@@ -324,6 +66,6 @@ Message{message_id=0, posted_by=1, message_text='hello message', time_posted_epo
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  32.491 s
-[INFO] Finished at: 2023-02-14T02:13:51Z
+[INFO] Total time:  38.830 s
+[INFO] Finished at: 2023-02-14T20:38:33Z
 [INFO] ------------------------------------------------------------------------
