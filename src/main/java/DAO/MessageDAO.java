@@ -121,12 +121,11 @@ public class MessageDAO {
 
     private static List<Message> messages = new ArrayList<>();
     public Message updateMessage(int message_id, String message_text) {
-        Connection connection = ConnectionUtil.getConnection(); 
+        Connection connection = ConnectionUtil.getConnection();
+        
+        
+        if (message_text != null || message_text.length() > 0 || message_text.length() < 255) {
         try{  
-        if (message_text == null || message_text.length() == 0 || message_text.length() > 255) {
-            return null;
-         }
-         
             String sql = "UPDATE message SET message_text = ? WHERE message_id = ?;";
             PreparedStatement statement = connection.prepareStatement(sql); {
             statement.setString(1, message_text);
@@ -140,6 +139,8 @@ public class MessageDAO {
             e.printStackTrace();
 
         }
+        return null;
+    }
         return null;
     }
     

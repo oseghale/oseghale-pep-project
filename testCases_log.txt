@@ -29,7 +29,7 @@ Unique index or primary key violation: "PUBLIC.CONSTRAINT_INDEX_E ON PUBLIC.ACCO
 INSERT INTO account(username, password) VALUES (?,?) [23505-214]
 1
 user
-[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.065 s - in AuthIntegrationTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.563 s - in AuthIntegrationTest
 [INFO] Running MessagingIntegrationTest
 Message{message_id=0, posted_by=1, message_text='hello message', time_posted_epoch=1669947792}
 !
@@ -57,7 +57,7 @@ Message{message_id=0, posted_by=1, message_text='message 2', time_posted_epoch=1
 Message{message_id=0, posted_by=2, message_text='message 3', time_posted_epoch=1669947792}
 Message{message_id=0, posted_by=1, message_text='hello message', time_posted_epoch=1669947792}
 Message{message_id=0, posted_by=1, message_text='hello message', time_posted_epoch=1669947792}
-[INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 20.724 s - in MessagingIntegrationTest
+[INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 20.688 s - in MessagingIntegrationTest
 [INFO] 
 [INFO] Results:
 [INFO] 
@@ -66,6 +66,6 @@ Message{message_id=0, posted_by=1, message_text='hello message', time_posted_epo
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  38.830 s
-[INFO] Finished at: 2023-02-14T20:38:33Z
+[INFO] Total time:  32.936 s
+[INFO] Finished at: 2023-02-14T22:42:58Z
 [INFO] ------------------------------------------------------------------------
