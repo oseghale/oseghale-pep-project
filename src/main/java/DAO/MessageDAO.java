@@ -122,9 +122,10 @@ public class MessageDAO {
     private static List<Message> messages = new ArrayList<>();
     public Message updateMessage(int message_id, String message_text) {
         Connection connection = ConnectionUtil.getConnection();
+
+        int messageText = message_text.length();
         
-        
-        if (message_text != null || message_text.length() > 0 || message_text.length() < 255) {
+        if (message_text != null || messageText > 0 || message_text.length() < 255) {
         try{  
             String sql = "UPDATE message SET message_text = ? WHERE message_id = ?;";
             PreparedStatement statement = connection.prepareStatement(sql); {
