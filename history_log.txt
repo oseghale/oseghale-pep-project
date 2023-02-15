@@ -1,7 +1,7 @@
-commit 9ee6d5fc9231f09dbb14b0cb1434d551d393321b
+commit c853eab554b0768f855020fb49150c92d8e65a05
 Author: oseghale <ebeaemmanuel@gmail.com>
-Date:   Wed Feb 15 05:41:40 2023 +0000
+Date:   Wed Feb 15 05:47:30 2023 +0000
 
-    reversed MessageDAO patch method if condition
+    MessageDAO syntax mod
 
- 3 files changed, 14 insertions(+), 13 deletions(-)
+ 3 files changed, 11 insertions(+), 10 deletions(-)
